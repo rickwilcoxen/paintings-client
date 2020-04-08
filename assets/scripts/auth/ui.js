@@ -108,6 +108,8 @@ const findPaintingSuccess = function () {
   $('#message').text('found paintings!')
   $('#message').removeClass()
   $('#message').addClass('success')
+  document.getElementById('found-paintings').style.display = 'block'
+  $('#found-paintings').text('Paintings you have: ' + store.paintings)
 }
 
 const findPaintingFailure = function () {

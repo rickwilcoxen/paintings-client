@@ -48,7 +48,7 @@ const onCreatePainting = function (event) {
   api.createPainting(data)
     .then(ui.paintingCreateSuccess)
     .catch(ui.paintingCreateFailure)
-  console.log('create Painting api data is ' + api.data)
+  // console.log('create Painting api data is ' + api.data)
 }
 
 const onUpdatePainting = function (event) {

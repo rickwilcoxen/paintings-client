@@ -71,7 +71,7 @@ const updatePainting = function (data) {
 
 const findPainting = function (data) {
   return $.ajax({
-    url: config.apiUrl + '/paintings/' + data.id,
+    url: config.apiUrl + '/paintings',
     method: 'GET',
     headers: {
       Authorization: 'Token token=' + store.user.token
