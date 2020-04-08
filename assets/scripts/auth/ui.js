@@ -6,7 +6,7 @@ const signUpSuccess = function (data) {
   document.getElementById('message').style.display = 'block'
   $('#message').removeClass()
   $('#message').addClass('success')
-  console.log('signUpSuccess data is: ', data)
+  // console.log('signUpSuccess data is: ', data)
 }
 
 const signUpFailure = function (data) {
@@ -14,7 +14,7 @@ const signUpFailure = function (data) {
   document.getElementById('message').style.display = 'block'
   $('#message').removeClass()
   $('#message').addClass('failure')
-  console.log('signUpFailure data is: ', data)
+  // console.log('signUpFailure data is: ', data)
 }
 
 const signInSuccess = function (data) {
@@ -22,11 +22,15 @@ const signInSuccess = function (data) {
   $('#message').removeClass()
   $('#message').addClass('success')
   document.getElementById('message').style.display = 'block'
-  console.log('signInSuccess data is: ', data)
+  // console.log('signInSuccess data is: ', data)
   document.getElementById('sign-out').style.display = 'block'
   document.getElementById('sign-in').style.display = 'none'
   document.getElementById('change-pw').style.display = 'block'
   document.getElementById('sign-up').style.display = 'none'
+  document.getElementById('create').style.display = 'block'
+  document.getElementById('update').style.display = 'block'
+  document.getElementById('find-all').style.display = 'block'
+  document.getElementById('delete').style.display = 'block'
   store.user = data.user
 }
 
@@ -71,6 +75,48 @@ const signOutFailure = function () {
   $('#message').addClass('failure')
 }
 
+const paintingCreateSuccess = function () {
+  document.getElementById('message').style.display = 'block'
+  $('#message').text('log painting success')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+}
+
+const paintingCreateFailure = function () {
+  document.getElementById('message').style.display = 'block'
+  $('#message').text('log painting failure')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+}
+
+const updatePaintingSuccess = function () {
+  document.getElementById('message').style.display = 'block'
+  $('#message').text('update painting success')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+}
+
+const updatePaintingFailure = function () {
+  document.getElementById('message').style.display = 'block'
+  $('#message').text('update painting failure')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+}
+
+const findPaintingSuccess = function () {
+  document.getElementById('message').style.display = 'block'
+  $('#message').text('found paintings!')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+}
+
+const findPaintingFailure = function () {
+  document.getElementById('message').style.display = 'block'
+  $('#message').text('unable to find paintings')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -79,5 +125,11 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutSuccess,
-  signOutFailure
+  signOutFailure,
+  paintingCreateSuccess,
+  paintingCreateFailure,
+  updatePaintingSuccess,
+  updatePaintingFailure,
+  findPaintingSuccess,
+  findPaintingFailure
 }

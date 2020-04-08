@@ -5,7 +5,7 @@ const ui = require('./ui.js')
 
 const onSignUp = function (event) {
   event.preventDefault()
-  console.log('Signing up')
+  // console.log('Signing up')
   const data = getFormFields(event.target)
   document.getElementById('sign-up').reset()
   api.signUp(data)
@@ -15,7 +15,7 @@ const onSignUp = function (event) {
 
 const onSignIn = function (event) {
   event.preventDefault()
-  console.log('Signing in')
+  // console.log('Signing in')
   const data = getFormFields(event.target)
   document.getElementById('sign-in').reset()
   api.signIn(data)
@@ -25,7 +25,7 @@ const onSignIn = function (event) {
 
 const onChangePassword = function (event) {
   event.preventDefault()
-  console.log('Changed password')
+  // console.log('Changed password')
   const data = getFormFields(event.target)
   document.getElementById('sign-up').reset()
   api.changePassword(data)
@@ -36,15 +36,44 @@ const onChangePassword = function (event) {
 // sign out function which triggers sign in/up elements to appear
 const onSignOut = function (event) {
   event.preventDefault()
-  console.log('Signed out')
+  // console.log('Signed out')
   api.signOut()
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
+}
+
+const onCreatePainting = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  // const userId = null
+  api.createPainting(data)
+    .then(ui.paintingCreateSuccess)
+    .catch(ui.paintingCreateFailure)
+  console.log('create Painting api data is ' + api.data)
+}
+
+const onUpdatePainting = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.updatePainting(data)
+    .then(ui.updatePaintingSuccess)
+    .catch(ui.updatePaintingFailure)
+}
+
+const onFindPainting = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.findPainting(data.id)
+    .then(ui.findPaintingSuccess)
+    .catch(ui.findPaintingFailure)
 }
 
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
-  onSignOut
+  onSignOut,
+  onCreatePainting,
+  onUpdatePainting,
+  onFindPainting
 }

@@ -11,4 +11,7 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-pw').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
+  $('#create').on('submit', authEvents.onCreatePainting)
+  $('#update').on('submit', authEvents.onUpdatePainting)
+  $('#find-all').on('submit', authEvents.onFindPainting)
 })

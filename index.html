@@ -3,12 +3,18 @@
     <head>
       <title>Paintings</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> -->
+      <!-- Monospace font link -->
+      <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
 
+      <!-- This makes sure that elements are not visable before sign in. On load they will be invisible. Once signed in you can see them. On sign out, they will again be invisiable.-->
       <script type="text/javascript">
         window.onload = function() {
           document.getElementById('sign-out').style.display = 'none';
           document.getElementById('change-pw').style.display = 'none';
+          document.getElementById('create').style.display = 'none';
+          document.getElementById('update').style.display = 'none';
+          document.getElementById('find-all').style.display = 'none';
+          document.getElementById('delete').style.display = 'none';
         }
       </script>
 
@@ -22,7 +28,10 @@
     <body>
       <h1>View_Log_</h1>
       <nav>
+        <!-- Fail/Error/Success message -->
         <p id="message"></p>
+
+        <!-- Sign up -->
         <form id="sign-up">
           <legend>Sign up</legend>
           <input type="text" name="credentials[email]" placeholder="Email">
@@ -31,6 +40,7 @@
           <input type="submit" value="Sign Up!">
         </form>
 
+        <!-- Sign In -->
         <form id="sign-in">
           <legend>Sign in</legend>
           <input type="text" name="credentials[email]" placeholder="Email">
@@ -38,6 +48,7 @@
           <input type="submit" value="Sign in!">
         </form>
 
+        <!-- Change Password -->
         <form id="change-pw">
           <legend>Change Password</legend>
           <input type="password" name="passwords[old]" placeholder="Old Password">
@@ -45,31 +56,39 @@
           <input type="submit" value="Change password">
         </form>
 
+        <!-- Sign out -->
         <form id="sign-out">
           <input type="submit" value="Sign Out">
         </form>
 
       </nav>
-      <div id="create">
+      <!-- Create resource -->
+      <form id="create">
         <legend>Log a Painting</legend>
-        <input type="text" title="painting[title]" placeholder="Painting Title">
+        <input type="text" name="painting[title]" placeholder="Painting Title">
         <input type="text" name="painting[artist]" placeholder="Artist Name">
         <input type="text" name="painting[date]" placeholder="Date of Painting">
         <input type="submit" value="Log Painting">
-      </div>
-    <div id="update">
-      <legend> Update a Painting </legend>
-      <input type="text" title="painting[title]" placeholder="Painting Title">
-      <input type="text" name="painting[artist]" placeholder="Artist Name">
-      <input type="text" name="painting[date]" placeholder="Date of Painting">
-      <input type="submit" value="Update Painting">
-    </div>
-    <div id="find-all">
-      <input type="submit" value="View All Paintings">
-    </div>
-    <div id="delete">
-      <legend>Delete a Painting</legend>
-    </div>
+      </form>
+
+      <!--Update Resource  -->
+      <form id="update">
+        <legend> Update a Painting </legend>
+        <input type="text" title="painting[title]" placeholder="Painting Title">
+        <input type="text" name="painting[artist]" placeholder="Artist Name">
+        <input type="text" name="painting[date]" placeholder="Date of Painting">
+        <input type="submit" value="Update Painting">
+      </form>
+
+      <!-- Find all Resources-->
+      <form id="find-all">
+        <input type="submit" value="View All Paintings">
+      </form>
+
+      <!-- Delete resource -->
+      <form id="delete">
+        <legend>Delete a Painting</legend>
+      </form>
 
     </body>
 </html>
