@@ -1,1 +1,11 @@
 @import '~bootstrap/scss/bootstrap';
+
+body {
+  font-family: 'Roboto Mono', monospace, serif;
+  padding-left: 30px;
+}
+
+div {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
