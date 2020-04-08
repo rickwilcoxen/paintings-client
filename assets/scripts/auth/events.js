@@ -45,10 +45,6 @@ const onSignOut = function (event) {
 const onCreatePainting = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-<<<<<<< HEAD
-  // const userId = null
-=======
->>>>>>> tester
   api.createPainting(data)
     .then(ui.paintingCreateSuccess)
     .catch(ui.paintingCreateFailure)
@@ -66,11 +62,7 @@ const onUpdatePainting = function (event) {
 const onFindPainting = function (event) {
   event.preventDefault()
   const data = getFormFields(event.target)
-<<<<<<< HEAD
-  api.findPainting(data.id)
-=======
   api.findPainting(data)
->>>>>>> tester
     .then(ui.findPaintingSuccess)
     .catch(ui.findPaintingFailure)
 }
