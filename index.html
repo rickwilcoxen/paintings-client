@@ -1,8 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Paintings</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--  <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet"> -->
+
+      <script type="text/javascript">
+        window.onload = function() {
+          document.getElementById('sign-out').style.display = 'none';
+          document.getElementById('change-pw').style.display = 'none';
+        }
+      </script>
 
       <!-- Do not add `link` tags-->
       <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
@@ -12,6 +20,56 @@
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
     <body>
-      <h1>Browser Template</h1>
+      <h1>View_Log_</h1>
+      <nav>
+        <p id="message"></p>
+        <form id="sign-up">
+          <legend>Sign up</legend>
+          <input type="text" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="password" name="credentials[password_confirmation]" placeholder="Confirm password">
+          <input type="submit" value="Sign Up!">
+        </form>
+
+        <form id="sign-in">
+          <legend>Sign in</legend>
+          <input type="text" name="credentials[email]" placeholder="Email">
+          <input type="password" name="credentials[password]" placeholder="Password">
+          <input type="submit" value="Sign in!">
+        </form>
+
+        <form id="change-pw">
+          <legend>Change Password</legend>
+          <input type="password" name="passwords[old]" placeholder="Old Password">
+          <input type="password" name="passwords[new]" placeholder="New Password">
+          <input type="submit" value="Change password">
+        </form>
+
+        <form id="sign-out">
+          <input type="submit" value="Sign Out">
+        </form>
+
+      </nav>
+      <div id="create">
+        <legend>Log a Painting</legend>
+        <input type="text" title="painting[title]" placeholder="Painting Title">
+        <input type="text" name="painting[artist]" placeholder="Artist Name">
+        <input type="text" name="painting[date]" placeholder="Date of Painting">
+        <input type="submit" value="Log Painting">
+      </div>
+    <div id="update">
+      <legend> Update a Painting </legend>
+      <input type="text" title="painting[title]" placeholder="Painting Title">
+      <input type="text" name="painting[artist]" placeholder="Artist Name">
+      <input type="text" name="painting[date]" placeholder="Date of Painting">
+      <input type="submit" value="Update Painting">
+    </div>
+    <div id="find-all">
+      <input type="submit" value="View All Paintings">
+    </div>
+    <div id="delete">
+      <legend>Delete a Painting</legend>
+    </div>
+
     </body>
 </html>
