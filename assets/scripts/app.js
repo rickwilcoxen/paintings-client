@@ -14,4 +14,5 @@ $(() => {
   $('#create').on('submit', authEvents.onCreatePainting)
   $('#update').on('submit', authEvents.onUpdatePainting)
   $('#find-all').on('submit', authEvents.onFindPainting)
+  $('#delete').on('submit', authEvents.onDeletePainting)
 })

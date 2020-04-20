@@ -67,6 +67,14 @@ const onFindPainting = function (event) {
     .catch(ui.findPaintingFailure)
 }
 
+const onDeletePainting = function (event) {
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  // find id based on painting name
+  api.deletePainting(data)
+    .then(ui.deletePaintingSuccess)
+    .delete(ui.deletePaintingFailure)
+}
 module.exports = {
   onSignUp,
   onSignIn,
@@ -74,5 +82,6 @@ module.exports = {
   onSignOut,
   onCreatePainting,
   onUpdatePainting,
-  onFindPainting
+  onFindPainting,
+  onDeletePainting
 }

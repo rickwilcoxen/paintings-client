@@ -72,13 +72,22 @@ const updatePainting = function (data) {
 const findPainting = function (data) {
   return $.ajax({
     url: config.apiUrl + '/paintings',
-    method: 'GET',
+    method: 'POST',
     headers: {
       Authorization: 'Token token=' + store.user.token
     }
   })
 }
 
+const deletePainting = function (data) {
+  return $.ajax({
+    url: config.apiUrl + '/paintings/' + painting.id,
+    method: 'DELETE',
+    headers: {
+      Authorization: 'Token token=' + store.user.token
+    }
+  })
+}
 module.exports = {
   signUp,
   signIn,
@@ -86,5 +95,6 @@ module.exports = {
   signOut,
   createPainting,
   updatePainting,
-  findPainting
+  findPainting,
+  deletePainting
 }

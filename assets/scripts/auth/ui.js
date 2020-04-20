@@ -119,6 +119,20 @@ const findPaintingFailure = function () {
   $('#message').addClass('failure')
 }
 
+const deletePaintingSuccess = function () {
+  document.getElementById('message').style.display = 'block'
+  $('#message').text('deleted painting!')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+}
+
+const deletePaintingFailure = function () {
+  document.getElementById('message').style.display = 'block'
+  $('#message').text('unable to delete painting')
+  $('#message').removeClass()
+  $('#message').addClass('failure')
+}
+
 module.exports = {
   signUpSuccess,
   signUpFailure,
@@ -133,5 +147,7 @@ module.exports = {
   updatePaintingSuccess,
   updatePaintingFailure,
   findPaintingSuccess,
-  findPaintingFailure
+  findPaintingFailure,
+  deletePaintingSuccess,
+  deletePaintingFailure
 }
